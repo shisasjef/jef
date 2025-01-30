@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JEF Entrenamiento Vocal - Reserva de Clases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="JEF Entrenamiento Vocal Logo">
+        <h1>JEF Entrenamiento Vocal</h1>
+        <p>Clases personalizadas de canto y técnica vocal</p>
+    </header>
+    <div class="container">
+        <!-- Sección de registro -->
+        <div class="register-section">
+            <h2>Registro de Usuarios</h2>
+            <div class="form-group">
+                <label for="registerName">Nombre:</label>
+                <input type="text" id="registerName" placeholder="Ingresa tu nombre">
+            </div>
+            <div class="form-group">
+                <label for="registerPhone">Número de WhatsApp:</label>
+                <input type="text" id="registerPhone" placeholder="Ejemplo: +54 11 1234 5678">
+            </div>
+            <div class="form-group">
+                <label for="registerEmail">Correo Electrónico:</label>
+                <input type="email" id="registerEmail" placeholder="ejemplo@correo.com">
+            </div>
+            <button id="registerUser">Registrarse</button>
+        </div>
+
+        <!-- Sección de reserva (inicialmente oculta) -->
+        <div class="booking-section hidden">
+            <h2>Reservar Clase</h2>
+            <div class="days" id="days"></div>
+            <div class="hours" id="hours"></div>
+            <button id="confirmBooking" disabled>Confirmar Reserva</button>
+        </div>
+
+        <!-- Sección de precios -->
+        <div class="pricing-section">
+            <h2>Precios de las Clases</h2>
+            <p><strong>Clases Individuales:</strong></p>
+            <ul>
+                <li>Por Clase: $7000</li>
+                <li>Paquete de 4 Clases ($14000): $3500 por clase</li>
+                <li>Paquete de 8 Clases ($20000): $2500 por clase</li>
+                <li>Paquete de 12 Clases ($24000): $2000 por clase</li>
+            </ul>
+            <p class="note">📌 Cuanto mayor sea el paquete, menor es el costo por clase.</p>
+            <p><strong>Clases para Dos Personas (Valor Total):</strong></p>
+            <ul>
+                <li>Por Clase: $10000</li>
+                <li>Paquete de 4 Clases ($20000): $5000 por clase</li>
+                <li>Paquete de 8 Clases ($30000): $3750 por clase</li>
+                <li>Paquete de 12 Clases ($40000): $3333 por clase</li>
+            </ul>
+            <p class="note">📌 El descuento por cantidad también aplica en clases para dos personas, reduciendo el costo por clase a medida que se elige un paquete más grande.</p>
+        </div>
+
+        <!-- Sección de administrador -->
+        <div class="admin-section">
+            <h2>Panel de Administrador</h2>
+            <table id="reservationsTable">
+                <thead>
+                    <tr>
+                        <th>Día</th>
+                        <th>Hora</th>
+                        <th>Nombre</th>
+                        <th>WhatsApp</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <div class="block-form">
+                <h3>Bloquear Horario</h3>
+                <select id="blockDay">
+                    <option value="">Selecciona un día</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miércoles">Miércoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">Viernes</option>
+                </select>
+                <select id="blockHour">
+                    <option value="">Selecciona una hora</option>
+                    <option value="16:00 - 16:45">16:00 - 16:45</option>
+                    <option value="17:00 - 17:45">17:00 - 17:45</option>
+                    <option value="18:00 - 18:45">18:00 - 18:45</option>
+                    <option value="19:00 - 19:45">19:00 - 19:45</option>
+                    <option value="20:00 - 20:45">20:00 - 20:45</option>
+                </select>
+                <button id="blockSlot">Bloquear Horario</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
